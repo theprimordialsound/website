@@ -231,7 +231,7 @@ img {
 .listen__heading h2,
 .about h2,
 .contact h2 {
-  font-family: 'Inter', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Teko', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 900;
   letter-spacing: -0.035em;
   text-transform: uppercase;
@@ -378,7 +378,7 @@ img {
 .service-row h3,
 .demo-row__title {
   margin: 0;
-  font-family: 'Poppins', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Inter', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(2rem, 3.3vw, 2.65rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -620,7 +620,7 @@ img {
 
 .about__name {
   margin: 0 0 0.65rem;
-  font-family: "Teko", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Inter", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
@@ -706,7 +706,7 @@ body:not(.templates-site) .contact {
   overflow-wrap: anywhere;
 }
 
-.contact__email-arrow {
+.contact__booking-arrow {
   display: grid;
   width: 3rem;
   height: 3rem;
@@ -717,7 +717,7 @@ body:not(.templates-site) .contact {
   color: #101010;
 }
 
-.contact__email-arrow svg {
+.contact__booking-arrow svg {
   width: 1.35rem;
   height: 1.35rem;
 }
@@ -1396,16 +1396,16 @@ body:not(.templates-site) .contact {
     margin-bottom: 1.5rem;
   }
 
-  .contact__email {
+  .contact__booking {
     min-height: 4rem;
     margin-bottom: 1.25rem;
     padding: 0.5rem;
     font-size: clamp(0.75rem, 4vw, 1rem);
   }
 
-  .contact__email-arrow {
-    width: 2.6rem;
-    height: 2.6rem;
+  .contact__booking-arrow {
+    width: 5rem;
+    height: 5rem;
   }
 
   .contact__socials {
