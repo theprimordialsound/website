@@ -20,4 +20,4 @@ The supplied logo variants and selected photography from the Figma prototype are
 
 ## Audio comparisons
 
-The Listen section reads `data/audio.json`. Add each comparison to its `tracks` array with a `title`, a `before` object, and an `after` object. Each side contains a `label` and `url`; URLs may be repository-relative paths or HTTP(S) links. The manifest is intentionally empty until the audio files and links are supplied.
+The Listen section reads `data/audio.json`. Each track has `title`, `category`, `service`, and `duration` fields, plus `before` and `after` objects with a `label` and `url`. Add each audio URL when the files are available; until then, leave the URL as `null`. The player stays disabled until usable audio is provided. URLs may be repository-relative paths or HTTP(S) links.

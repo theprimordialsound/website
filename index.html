@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Live sound, studio production, and session musicians.">
+    <meta name="description" content="Live sound, studio production, and session musicians. Based in India. Heard worldwide.">
     <title>The Primordial Sound — Live Sound · Studio · Label</title>
     <link rel="icon" href="assets/brand/fader-icon-dark.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
@@ -22,7 +22,7 @@
         <a href="#contact">Contact</a>
         <a href="templates.html">Templates</a>
       </nav>
-      <a class="button button--outline header-cta" href="#contact">Book a session <span aria-hidden="true">↗</span></a>
+      <a class="button button--outline header-cta" href="#contact">Book a session</a>
       <details class="mobile-nav">
         <summary aria-label="Open navigation">Menu <span aria-hidden="true">+</span></summary>
         <nav aria-label="Mobile navigation">
@@ -39,68 +39,131 @@
     <main>
       <section class="hero" id="top">
         <div class="hero__content">
-          <p class="eyebrow">Live sound <span>/</span> Studio production <span>/</span> Session musicians</p>
-          <h1><span>Stage.</span><span class="accent">Studio.</span><span>Sound.</span></h1>
-        </div>
-      </section>
-
-      <section class="section services" id="services">
-        <div class="section-heading">
-          <p class="eyebrow">Services</p>
-          <h2>Services</h2>
-        </div>
-        <ol class="service-list">
-          <li><span class="service-number">01</span><h3>Live Sound</h3><span class="service-arrow" aria-hidden="true">↗</span></li>
-          <li><span class="service-number">02</span><h3>Studio Production</h3><span class="service-arrow" aria-hidden="true">↗</span></li>
-          <li><span class="service-number">03</span><h3>Session Musicians</h3><span class="service-arrow" aria-hidden="true">↗</span></li>
-        </ol>
-      </section>
-
-      <section class="section listen" id="listen">
-        <div class="section-heading">
-          <p class="eyebrow">Audio comparisons</p>
-          <h2>Listen</h2>
-        </div>
-        <div class="audio-list" id="audio-list" data-audio-manifest="data/audio.json" aria-live="polite">
-          <p class="empty-state">Audio comparisons will appear here when the audio manifest is available.</p>
-        </div>
-      </section>
-
-      <section class="section work" id="work">
-        <div class="section-heading section-heading--row">
-          <div>
-            <p class="eyebrow">Selected work</p>
-            <h2>Work</h2>
+          <p class="eyebrow hero__eyebrow">Live sound <span>/</span> Studio production <span>/</span> Session musicians</p>
+          <h1>Stage.<br><span>Studio.</span><br>Sound.</h1>
+          <p class="hero__intro">From your first idea to the final song. Live mixes, release-ready masters, and guitar and drum tracks shaped around your music.</p>
+          <div class="hero__actions">
+            <a class="button button--solid" href="#contact">Book now <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline" href="#listen">Listen to demos <span aria-hidden="true">↓</span></a>
           </div>
-          <span class="eyebrow">Live sound · Studio · Label</span>
+        </div>
+        <p class="hero__location">Based in India.<br>Heard worldwide.</p>
+        <div class="hero__signal" aria-label="Feel it. Don't just hear it.">
+          <div class="signal-wave" aria-hidden="true">
+            <span style="--bar: 22%"></span><span style="--bar: 46%"></span><span style="--bar: 32%"></span><span style="--bar: 68%"></span>
+            <span style="--bar: 48%"></span><span style="--bar: 82%"></span><span style="--bar: 37%"></span><span style="--bar: 58%"></span>
+            <span style="--bar: 100%"></span><span style="--bar: 60%"></span><span style="--bar: 44%"></span><span style="--bar: 76%"></span>
+            <span style="--bar: 52%"></span><span style="--bar: 90%"></span><span style="--bar: 35%"></span><span style="--bar: 64%"></span>
+            <span style="--bar: 48%"></span><span style="--bar: 78%"></span><span style="--bar: 29%"></span><span style="--bar: 55%"></span>
+            <span style="--bar: 88%"></span><span style="--bar: 42%"></span><span style="--bar: 70%"></span><span style="--bar: 36%"></span>
+          </div>
+          <span>Feel it. Don't just hear it.</span>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow"><span class="accent">01 /</span> What I do</p>
+            <h2>Services</h2>
+          </div>
+          <p class="section-intro__note">From the first note<br>to the final master.</p>
+        </div>
+        <div class="service-list">
+          <article class="service-row">
+            <span class="service-row__number">01</span>
+            <div class="service-row__content">
+              <h3>Live mixing</h3>
+              <p>Hear every detail on stage. Get a live mix, monitors, and PA setup tailored to your band, your venue, and the way you perform.</p>
+              <p class="service-row__tags">FOH mixing <span>•</span> IEM rigs <span>•</span> Live stage</p>
+            </div>
+            <img class="service-row__image" src="assets/images/live-console.jpg" alt="A live sound engineer mixing a performance">
+          </article>
+          <article class="service-row">
+            <span class="service-row__number">02</span>
+            <div class="service-row__content">
+              <h3>Mixing &amp; mastering</h3>
+              <p>Give your next release the clarity and impact it deserves, with mixing and mastering shaped around your songs and references.</p>
+              <p class="service-row__tags">Stem mixing <span>•</span> Mastering <span>•</span> Release-ready</p>
+            </div>
+            <img class="service-row__image" src="assets/images/service-mixing-mastering.jpg" alt="Analog studio mixing equipment">
+          </article>
+          <article class="service-row">
+            <span class="service-row__number">03</span>
+            <div class="service-row__content">
+              <h3>Session musicians</h3>
+              <p class="service-row__subtitle">Session guitarist <span>/</span> Session drummer</p>
+              <p>Bring your song to life with guitar and drum parts built around its groove, energy, and arrangement. Share your demo and the feel you're after.</p>
+              <p class="service-row__tags">Guitar tracks <span>•</span> Drum tracks <span>•</span> Remote recording</p>
+            </div>
+            <img class="service-row__image" src="assets/images/service-session-musicians.jpg" alt="Electric guitar on a studio stage">
+          </article>
+          <article class="service-row service-row--text">
+            <span class="service-row__number">04</span>
+            <div class="service-row__content">
+              <h3>Song setup</h3>
+              <p>Bring an idea, a melody, or a rough voice note. We'll develop the arrangement, record the parts, and deliver a complete song built around your vision.</p>
+              <p class="service-row__tags">Your idea <span>→</span> Arrangement &amp; recording <span>→</span> Your finished song</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="listen section" id="listen">
+        <div class="listen__heading">
+          <p class="eyebrow"><span class="accent">02 /</span> Listen closely</p>
+          <h2>The difference is in the details.</h2>
+          <p class="listen__subhead">Raw signal. Finished sound. Compare the two.</p>
+          <p class="listen__note">Player preview / Sample audio to be added</p>
+        </div>
+        <div class="demo-list" id="demo-list" data-audio-manifest="data/audio.json" aria-live="polite">
+          <p class="empty-state">Loading demos…</p>
+        </div>
+        <div class="listen__footer">
+          <p>Best experienced with headphones.</p>
+          <p>Four perspectives. One uncompromising sound.</p>
+        </div>
+      </section>
+
+      <section class="work section" id="work">
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow"><span class="accent">03 /</span> Selected work</p>
+            <h2>Selected work</h2>
+          </div>
         </div>
         <div class="work-table-wrap">
           <table class="work-table">
             <thead>
-              <tr><th scope="col">Project</th><th scope="col">Service</th><th scope="col">Year</th><th scope="col" aria-label="Details"></th></tr>
+              <tr><th scope="col">Project</th><th scope="col">Style</th><th scope="col">Service</th></tr>
             </thead>
             <tbody>
-              <tr><td colspan="4" class="empty-state">Selected work will be added here.</td></tr>
+              <tr><td>Nightfall</td><td>Indie rock</td><td>Mix &amp; master</td></tr>
+              <tr><td>Monsoon Sessions</td><td>Acoustic</td><td>Session guitar</td></tr>
+              <tr><td>Live at Dusk</td><td>Live</td><td>FOH mix</td></tr>
+              <tr><td>Afterhours</td><td>Alternative</td><td>Session drums</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section class="section about" id="about">
+      <section class="about section" id="about">
         <div class="about__image">
-          <img src="assets/images/live-console.jpg" alt="Mixing console in front of a live stage">
+          <img src="assets/images/about-studio.jpg" alt="A warmly lit recording studio">
         </div>
         <div class="about__content">
-          <p class="eyebrow">About</p>
-          <h2>Live sound.<br>Studio.<br>Label.</h2>
-          <p class="about__tagline">THE PRIMORDIAL SOUND</p>
+          <p class="eyebrow"><span class="accent">04 /</span> About</p>
+          <h2>The Primordial Sound</h2>
+          <p class="about__tagline">Live sound <span>·</span> Studio <span>·</span> Label</p>
+          <p class="about__location">Based in India.<br>Heard worldwide.</p>
         </div>
       </section>
 
       <section class="contact" id="contact">
-        <p class="eyebrow">Contact</p>
-        <h2>Book a session.</h2>
-        <p class="empty-state">Contact details will be added here.</p>
+        <p class="eyebrow">The Primordial Sound</p>
+        <h2>Have an idea,<br>not a session?</h2>
+        <p>Bring your idea. We'll help turn it into a complete song.</p>
+        <a class="button button--outline" href="#contact">Book a session <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
@@ -109,7 +172,7 @@
         <img src="assets/brand/fader-icon-dark.png" alt="">
         <span>THE PRIMORDIAL SOUND</span>
       </a>
-      <span class="eyebrow">Live sound · Studio · Label</span>
+      <span class="eyebrow">© 2026 The Primordial Sound</span>
       <a class="back-to-top" href="#top">Back to top ↑</a>
     </footer>
     <script src="scripts/site.js" defer></script>

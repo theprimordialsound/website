@@ -8,54 +8,50 @@
     <link rel="icon" href="assets/brand/fader-icon-dark.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <header class="site-header">
+  <body class="templates-site">
+    <header class="site-header site-header--templates">
       <a class="brand" href="index.html#top" aria-label="The Primordial Sound, home">
         <img src="assets/brand/fader-icon-dark.png" alt="">
         <span>THE PRIMORDIAL SOUND</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#listen">Listen</a>
-        <a href="index.html#work">Work</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="templates.html" aria-current="page">Templates</a>
-      </nav>
-      <a class="button button--outline header-cta" href="index.html#contact">Book a session <span aria-hidden="true">↗</span></a>
+      <a class="back-home" href="index.html">← Back to home</a>
+      <a class="button button--outline header-cta" href="index.html#contact">Book a session</a>
     </header>
 
-    <main class="templates-page">
-      <section class="section templates-intro">
-        <p class="eyebrow">Resources <span>/</span> Recording templates</p>
+    <main>
+      <section class="templates-intro section">
+        <p class="eyebrow"><span class="accent">Resources /</span> Recording templates</p>
         <h1>Less setup.<br>More sound.</h1>
         <p>Spend less time setting up and more time recording.<br>Choose a recording template, then download it for REAPER or Logic Pro.</p>
       </section>
-      <section class="section templates-list">
-        <div class="section-heading section-heading--row">
+      <section class="templates-list section">
+        <div class="templates-list__head">
           <p class="eyebrow">Available templates</p>
           <p class="eyebrow">REAPER / Logic Pro</p>
         </div>
         <article class="template-row">
-          <span class="service-number">01</span>
-          <div>
+          <span class="template-row__number">01</span>
+          <div class="template-row__content">
             <h2>Recording session</h2>
             <p>A session starting point for your recording workflow.<br>Pick the format that fits your setup.</p>
-            <span class="eyebrow">Two formats. Your workflow.</span>
+            <p class="eyebrow">Two formats. Your workflow.</p>
           </div>
-          <button class="button button--solid" type="button" disabled>Download <span aria-hidden="true">↓</span></button>
+          <button class="button button--solid template-download" type="button" disabled aria-describedby="template-download-note">
+            Download <span aria-hidden="true">↓</span>
+          </button>
         </article>
-        <p class="empty-state template-note">Template downloads will be available here.</p>
+        <p class="template-download-note" id="template-download-note">Template files will be available here.</p>
+      </section>
+      <section class="contact contact--compact">
+        <h2>Have an idea, not a session?</h2>
+        <p>Bring your idea. We'll help turn it into a complete song.</p>
+        <a class="button button--outline" href="index.html#contact">Book a session <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <a class="brand" href="index.html#top">
-        <img src="assets/brand/fader-icon-dark.png" alt="">
-        <span>THE PRIMORDIAL SOUND</span>
-      </a>
-      <span class="eyebrow">Live sound · Studio · Label</span>
-      <a class="back-to-top" href="#top">Back to top ↑</a>
+    <footer class="site-footer site-footer--templates">
+      <a href="index.html#top">THE PRIMORDIAL SOUND</a>
+      <span class="eyebrow">© 2026 The Primordial Sound</span>
     </footer>
   </body>
 </html>
