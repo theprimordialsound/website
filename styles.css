@@ -15,18 +15,18 @@
   scrollbar-width: auto;
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 14px;
   height: 14px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--background);
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   min-height: 2.5rem;
   border: 3px solid var(--background);
   border-radius: 999px;
@@ -37,20 +37,20 @@
   background-size: 7px 2px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background-color: #ff9552;
 }
 
-::-webkit-scrollbar-thumb:active {
+html::-webkit-scrollbar-thumb:active {
   background-color: #d66b28;
 }
 
-::-webkit-scrollbar-thumb:focus-visible {
+html::-webkit-scrollbar-thumb:focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: -3px;
 }
 
-::-webkit-scrollbar-corner {
+html::-webkit-scrollbar-corner {
   background: var(--background);
 }
 
@@ -778,6 +778,8 @@ body:not(.templates-site) .contact {
   max-height: min(90vh, 56rem);
   padding: clamp(1.5rem, 6vw, 2.5rem);
   overflow: auto;
+  scrollbar-color: auto;
+  scrollbar-width: auto;
   border: 1px solid #343438;
   background: #171719;
   color: var(--foreground);
@@ -1172,28 +1174,6 @@ body:not(.templates-site) .contact {
 
 
 
-.templates-site .contact__booking {
-  display: grid;
-  width: min(100%, 22rem);
-  min-height: 3rem;
-  place-items: center;
-  margin-bottom: 2rem;
-  padding: 0.75rem;
-  border: 1px solid #414147;
-  border-radius: 0.55rem;
-  background: #1d1d21;
-  color: var(--foreground);
-  cursor: pointer;
-  font: inherit;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  text-align: center;
-  transition: border-color 160ms ease;
-}
-
-.templates-site .contact__booking:hover {
-  border-color: var(--accent);
-}
-
 @media (max-width: 1000px) {
   .site-header {
     gap: 1rem;
@@ -1248,13 +1228,6 @@ body:not(.templates-site) .contact {
 }
 
 @media (max-width: 760px) {
-  .templates-site .contact__booking {
-    min-height: 4rem;
-    margin-bottom: 1.25rem;
-    padding: 0.5rem;
-    font-size: clamp(0.75rem, 4vw, 1rem);
-  }
-
   .site-header {
     min-height: 4.5rem;
     padding-block: 0.75rem;
