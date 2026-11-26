@@ -6,6 +6,14 @@
     <meta name="description" content="Live sound, studio production, and session musicians. Based in India. Heard worldwide.">
     <title>The Primordial Sound — Live Sound · Studio · Label</title>
     <link rel="icon" href="assets/brand/fader-icon-dark.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -47,7 +55,7 @@
             <a class="button button--outline" href="#listen">Listen to demos <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <p class="hero__location">Based in India.<br>Heard worldwide.</p>
+        <!-- <p class="hero__location">Based in India.<br>Heard worldwide.</p> -->
         <div class="hero__signal" aria-label="Feel it. Don't just hear it.">
           <div class="signal-wave" aria-hidden="true">
             <span style="--bar: 22%"></span><span style="--bar: 46%"></span><span style="--bar: 32%"></span><span style="--bar: 68%"></span>
@@ -209,8 +217,13 @@
           A little about your project
           <textarea name="message" rows="4" maxlength="3000" placeholder="The idea, the timeline, the sound you’re chasing..." required></textarea>
         </label>
+        <label class="booking-form__website" aria-hidden="true">
+          Leave this field empty
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
         <button class="button button--solid booking-form__submit" type="submit">Let’s talk sound <span aria-hidden="true">↗</span></button>
-        <p class="booking-form__footer">Preview form <span>•</span> Continue in your email app to send details</p>
+        <p class="booking-form__status" id="booking-status" role="status" aria-live="polite"></p>
+        <p class="booking-form__footer">Secure booking form <span>•</span> No email app needed to send</p>
       </form>
     </dialog>
     <script src="scripts/site.js" defer></script>

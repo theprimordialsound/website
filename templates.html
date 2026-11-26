@@ -87,8 +87,13 @@
           A little about your project
           <textarea name="message" rows="4" maxlength="3000" placeholder="The idea, the timeline, the sound you’re chasing..." required></textarea>
         </label>
+        <label class="booking-form__website" aria-hidden="true">
+          Leave this field empty
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
         <button class="button button--solid booking-form__submit" type="submit">Let’s talk sound <span aria-hidden="true">↗</span></button>
-        <p class="booking-form__footer">Preview form <span>•</span> Continue in your email app to send details</p>
+        <p class="booking-form__status" id="booking-status" role="status" aria-live="polite"></p>
+        <p class="booking-form__footer">Secure booking form <span>•</span> No email app needed to send</p>
       </form>
     </dialog>
     <script src="scripts/site.js" defer></script>

@@ -7,7 +7,7 @@
   --line: #343434;
   --accent: #ef8037;
   --gutter: clamp(1.25rem, 5vw, 4rem);
-  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter", "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
   background: var(--background);
   color: var(--foreground);
   scroll-behavior: smooth;
@@ -190,7 +190,7 @@ img {
 .listen__heading h2,
 .about h2,
 .contact h2 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Inter', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 900;
   letter-spacing: -0.035em;
   text-transform: uppercase;
@@ -330,7 +330,7 @@ img {
 .service-row h3,
 .demo-row__title {
   margin: 0;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Poppins', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(2rem, 3.3vw, 2.65rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -595,7 +595,7 @@ img {
 
 .work-table td:first-child {
   color: var(--foreground);
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Inter', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 1.45rem;
   text-transform: uppercase;
 }
@@ -713,7 +713,7 @@ img {
 
 .booking-dialog__header h2 {
   margin: 2rem 0 0;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Inter', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(2.8rem, 8vw, 4.25rem);
   letter-spacing: -0.035em;
   line-height: 0.95;
@@ -852,7 +852,9 @@ img {
 }
 
 .booking-field--project,
+.booking-form__website,
 .booking-form__submit,
+.booking-form__status,
 .booking-form__footer {
   grid-column: 1 / -1;
 }
@@ -888,12 +890,41 @@ img {
   border-color: var(--accent);
 }
 
+.booking-form__website {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .booking-form__submit {
   width: 100%;
   margin-top: 0.6rem;
   background: #f08337;
   font-size: 0.67rem;
   font-weight: 500;
+}
+
+.booking-form__status {
+  min-height: 0;
+  margin: 0;
+  color: #a7a7ae;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.booking-form__status:empty {
+  display: none;
+}
+
+.booking-form__status[data-state="success"] {
+  color: #a4d8a4;
+}
+
+.booking-form__status[data-state="error"] {
+  color: #ff9a79;
 }
 
 .booking-form__footer {
@@ -1001,7 +1032,7 @@ img {
 
 .template-row h2 {
   margin: 0;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: 'Inter', Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   letter-spacing: -0.02em;
   text-transform: uppercase;
