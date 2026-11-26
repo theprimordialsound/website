@@ -22,7 +22,7 @@
         <a href="#contact">Contact</a>
         <a href="templates.html">Templates</a>
       </nav>
-      <a class="button button--outline header-cta" href="#contact">Book a session</a>
+      <a class="button button--outline header-cta" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book a session</a>
       <details class="mobile-nav">
         <summary aria-label="Open navigation">Menu <span aria-hidden="true">+</span></summary>
         <nav aria-label="Mobile navigation">
@@ -43,7 +43,7 @@
           <h1>Stage.<br><span>Studio.</span><br>Sound.</h1>
           <p class="hero__intro">From your first idea to the final song. Live mixes, release-ready masters, and guitar and drum tracks shaped around your music.</p>
           <div class="hero__actions">
-            <a class="button button--solid" href="#contact">Book now <span aria-hidden="true">↗</span></a>
+            <a class="button button--solid" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book now <span aria-hidden="true">↗</span></a>
             <a class="button button--outline" href="#listen">Listen to demos <span aria-hidden="true">↓</span></a>
           </div>
         </div>
@@ -163,7 +163,7 @@
         <p class="eyebrow">The Primordial Sound</p>
         <h2>Have an idea,<br>not a session?</h2>
         <p>Bring your idea. We'll help turn it into a complete song.</p>
-        <a class="button button--outline" href="#contact">Book a session <span aria-hidden="true">↗</span></a>
+        <a class="button button--outline" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book a session <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
@@ -175,6 +175,43 @@
       <span class="eyebrow">© 2026 The Primordial Sound</span>
       <a class="back-to-top" href="#top">Back to top ↑</a>
     </footer>
+    <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+      <div class="booking-dialog__header">
+        <div>
+          <p class="eyebrow"><span class="accent">Booking /</span> The Primordial Sound</p>
+          <h2 id="booking-title">Book a session</h2>
+        </div>
+        <button class="booking-dialog__close" type="button" aria-label="Close booking form">×</button>
+      </div>
+      <p class="booking-dialog__intro">Tell us about your project and we’ll get back to you.</p>
+      <form class="booking-form" id="booking-form" target="booking-response-frame" method="post">
+        <label>
+          Name
+          <input name="name" autocomplete="name" maxlength="120" required>
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" maxlength="254" required>
+        </label>
+        <label>
+          Service
+          <input name="service" maxlength="100" required>
+        </label>
+        <label>
+          Project details
+          <textarea name="message" rows="4" maxlength="3000" required></textarea>
+        </label>
+        <label class="booking-form__website" aria-hidden="true">
+          Leave this field empty
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <input name="nonce" type="hidden">
+        <p class="booking-form__status" id="booking-status" role="status" aria-live="polite"></p>
+        <button class="button button--solid booking-form__submit" type="submit" disabled>Send booking request <span aria-hidden="true">↗</span></button>
+      </form>
+      <iframe class="booking-response-frame" name="booking-response-frame" title="Booking request response"></iframe>
+    </dialog>
+    <script src="scripts/config.js" defer></script>
     <script src="scripts/site.js" defer></script>
   </body>
 </html>
