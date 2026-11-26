@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Recording templates from The Primordial Sound.">
+    <title>Recording Templates — The Primordial Sound</title>
+    <link rel="icon" href="assets/brand/fader-icon-dark.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="templates-site">
+    <header class="site-header site-header--templates">
+      <a class="brand" href="index.html" aria-label="The Primordial Sound, home">
+        <img src="assets/brand/fader-icon-dark.png" alt="">
+        <span>THE PRIMORDIAL SOUND</span>
+      </a>
+      <a class="back-home" href="index.html">← Back to home</a>
+      <a class="button button--outline header-cta" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book a session</a>
+    </header>
+
+    <main>
+      <section class="templates-intro section">
+        <p class="eyebrow"><span class="accent">Resources /</span> Recording templates</p>
+        <h1>Less setup.<br>More sound.</h1>
+        <p>Spend less time setting up and more time recording.<br>Choose a recording template, then download it for REAPER or Logic Pro.</p>
+      </section>
+      <section class="templates-list section">
+        <div class="templates-list__head">
+          <p class="eyebrow">Available templates</p>
+          <p class="eyebrow">REAPER / Logic Pro</p>
+        </div>
+        <article class="template-row">
+          <span class="template-row__number">01</span>
+          <div class="template-row__content">
+            <h2>Recording session</h2>
+            <p>A session starting point for your recording workflow.<br>Pick the format that fits your setup.</p>
+            <p class="eyebrow">Two formats. Your workflow.</p>
+          </div>
+          <button class="button button--solid template-download" type="button" disabled aria-describedby="template-download-note">
+            Download <span aria-hidden="true">↓</span>
+          </button>
+        </article>
+        <p class="template-download-note" id="template-download-note">Template files will be available here.</p>
+      </section>
+      <section class="contact">
+        <h2>Get in <span>touch</span></h2>
+        <p class="contact__intro">Tell me about your music, your timeline, and the sound you’re after.</p>
+        <button class="contact__booking" type="button" data-booking-open aria-haspopup="dialog">
+          <span>Book a session</span>
+        </button>
+        <div class="contact__socials">
+          <a class="contact__social" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"></path>
+            </svg>
+            <span>YouTube</span>
+          </a>
+          <a class="contact__social" href="https://www.instagram.com/theprimordialsound/" target="_blank" rel="noopener noreferrer" aria-label="The Primordial Sound on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.7" cy="6.6" r="0.8" fill="currentColor" stroke="none"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html#top" aria-label="The Primordial Sound, home">
+        <span>THE PRIMORDIAL SOUND</span>
+      </a>
+      <span class="site-footer__motto">Independent sound. No compromise.</span>
+      <span class="site-footer__copyright">© 2026 The Primordial Sound</span>
+    </footer>
+    <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+      <div class="booking-dialog__header">
+        <div>
+          <p class="eyebrow">Let’s find your sound</p>
+          <h2 id="booking-title">Book a session</h2>
+        </div>
+        <button class="booking-dialog__close" type="button" aria-label="Close booking form">×</button>
+      </div>
+      <p class="booking-dialog__intro">Tell us about your music and what you need. We’ll help you find the right next step.</p>
+      <form class="booking-form" id="booking-form">
+        <fieldset class="booking-services">
+          <legend>What are we working on?</legend>
+          <span class="booking-services__hint">Select all that apply</span>
+          <div class="booking-services__options">
+            <label class="booking-service"><input type="checkbox" name="services" value="Live Mixing"><span>Live Mixing</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Mixing &amp; Mastering"><span>Mixing &amp; Mastering</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Session Guitarist"><span>Session Guitarist</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Session Drummer"><span>Session Drummer</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Song Setup"><span>Song Setup</span></label>
+          </div>
+        </fieldset>
+        <label class="booking-field">
+          Your name
+          <input name="name" autocomplete="name" maxlength="120" placeholder="Your name" required>
+        </label>
+        <label class="booking-field">
+          Email address
+          <input name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+        </label>
+        <label class="booking-field booking-field--project">
+          A little about your project
+          <textarea name="message" rows="4" maxlength="3000" placeholder="The idea, the timeline, the sound you’re chasing..." required></textarea>
+        </label>
+        <label class="booking-form__website" aria-hidden="true">
+          Leave this field empty
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <button class="button button--solid booking-form__submit" type="submit">Let’s talk sound <span aria-hidden="true">↗</span></button>
+        <p class="booking-form__status" id="booking-status" role="status" aria-live="polite"></p>
+        <p class="booking-form__footer">Secure booking form <span>•</span> No email app needed to send</p>
+      </form>
+    </dialog>
+    <script src="scripts/site.js" defer></script>
+  </body>
+</html>
