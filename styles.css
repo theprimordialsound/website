@@ -779,11 +779,15 @@ body:not(.templates-site) .contact {
   padding: clamp(1.5rem, 6vw, 2.5rem);
   overflow: auto;
   scrollbar-color: auto;
-  scrollbar-width: auto;
+  scrollbar-width: none;
   border: 1px solid #343438;
   background: #171719;
   color: var(--foreground);
   box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 65%);
+}
+
+.booking-dialog::-webkit-scrollbar {
+  display: none;
 }
 
 .booking-dialog::backdrop {
@@ -828,6 +832,12 @@ body:not(.templates-site) .contact {
 
 .booking-dialog__close:hover {
   color: var(--accent);
+}
+
+.booking-dialog__close:focus-visible {
+  border-radius: 0.25rem;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .booking-dialog__intro {
