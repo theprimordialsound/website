@@ -46,17 +46,11 @@
         <p class="template-download-note" id="template-download-note">Template files will be available here.</p>
       </section>
       <section class="contact">
-        <p class="eyebrow contact__eyebrow">05 / Your next project starts here</p>
         <h2>Get in <span>touch</span></h2>
         <p class="contact__intro">Tell me about your music, your timeline, and the sound you’re after.</p>
-        <a class="contact__email" href="mailto:hello@theprimordialsound.com">
-          <span>hello@theprimordialsound.com</span>
-          <span class="contact__email-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17 17 7M7 7h10v10"></path>
-            </svg>
-          </span>
-        </a>
+        <button class="contact__booking" type="button" data-booking-open aria-haspopup="dialog">
+          <span>Book a session</span>
+        </button>
         <div class="contact__socials">
           <a class="contact__social" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -73,12 +67,13 @@
             <span>Instagram</span>
           </a>
         </div>
-        <a class="contact__booking" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book a session <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
     <footer class="site-footer site-footer--templates">
-      <a href="index.html#top">THE PRIMORDIAL SOUND</a>
+      <a class="brand" href="index.html#top" aria-label="The Primordial Sound, home">
+        <span>THE PRIMORDIAL SOUND</span>
+      </a>
       <span class="site-footer__motto">Independent sound. No compromise.</span>
       <span class="site-footer__copyright">© 2026 The Primordial Sound</span>
     </footer>
