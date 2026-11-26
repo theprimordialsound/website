@@ -120,11 +120,23 @@ function createTrackElement(track, index) {
   const waveform = document.createElement("div");
   waveform.className = "demo-wave demo-row__wave";
   waveform.setAttribute("aria-hidden", "true");
-  for (let barIndex = 0; barIndex < 44; barIndex += 1) {
+  const waveformBars = [];
+  const barCount = 96;
+  for (let barIndex = 0; barIndex < barCount; barIndex += 1) {
     const bar = document.createElement("span");
-    const height = 18 + Math.abs(Math.sin((barIndex + 1) * 1.7)) * 82;
+    const position = barIndex + 1;
+    const height = 24 + Math.abs(Math.sin(position * 1.7 + Math.sin(position * 0.43) * 2)) * 76;
     bar.style.setProperty("--bar-height", `${height.toFixed(1)}%`);
+    bar.classList.toggle("is-played", barIndex < Math.ceil(barCount * 0.24));
     waveform.append(bar);
+    waveformBars.push(bar);
+  }
+
+  function updateWaveformProgress(progress) {
+    const playedCount = Math.ceil(Math.max(0, Math.min(1, progress)) * waveformBars.length);
+    waveformBars.forEach((bar, barIndex) => {
+      bar.classList.toggle("is-played", barIndex < playedCount);
+    });
   }
 
   const duration = document.createElement("span");
@@ -188,6 +200,11 @@ function createTrackElement(track, index) {
   });
 
   audio.addEventListener("ended", stopPlayback);
+  audio.addEventListener("timeupdate", () => {
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+      updateWaveformProgress(audio.currentTime / audio.duration);
+    }
+  });
   audio.addEventListener("pause", () => {
     if (isPlaying) {
       stopPlayback();

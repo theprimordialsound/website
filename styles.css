@@ -63,8 +63,8 @@ img {
 }
 
 .brand img {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2.6rem;
+  height: 2.6rem;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -395,7 +395,6 @@ img {
 
 .listen__heading h2 {
   max-width: 60rem;
-  font-size: clamp(2.9rem, 6.4vw, 5.5rem);
 }
 
 .listen__subhead {
@@ -501,18 +500,25 @@ img {
   display: flex;
   height: 2.4rem;
   align-items: center;
-  gap: 2px;
+  justify-content: space-between;
   overflow: hidden;
 }
 
 .demo-wave span {
-  flex: 1 0 2px;
+  flex: 0 0 2px;
+  width: 2px;
   height: var(--bar-height);
+  border-radius: 1px;
   background: #4a4b50;
 }
 
-.demo-wave span:nth-child(-n + 13) {
+.demo-wave span.is-played {
   background: var(--accent);
+}
+
+.demo-row__duration {
+  justify-self: end;
+  text-align: right;
 }
 
 .demo-mode {
@@ -601,22 +607,12 @@ img {
 }
 
 .about {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.95fr);
-  align-items: center;
-  gap: clamp(2rem, 7vw, 6rem);
+  display: block;
   background: #151515;
 }
 
-.about__image {
-  height: clamp(23rem, 43vw, 38rem);
-  overflow: hidden;
-}
-
-.about__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.about__content {
+  max-width: 62rem;
 }
 
 .about h2 {
@@ -667,19 +663,29 @@ img {
 
 .contact__social {
   display: inline-flex;
+  width: 2.7rem;
+  height: 2.7rem;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
   margin-left: 1.25rem;
+  border: 1px solid var(--line);
   color: #b6b6bd;
-  font-size: 0.65rem;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition: color 160ms ease;
 }
 
 .contact__social:hover {
   color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contact__social:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.contact__social svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .booking-dialog {
@@ -1154,8 +1160,8 @@ img {
   }
 
   .brand img {
-    width: 1.65rem;
-    height: 1.65rem;
+    width: 2.1rem;
+    height: 2.1rem;
   }
 
   .hero {
@@ -1289,15 +1295,6 @@ img {
     min-width: 34rem;
   }
 
-  .about {
-    grid-template-columns: 1fr;
-    gap: 1.7rem;
-  }
-
-  .about__image {
-    height: 20rem;
-  }
-
   .about h2 {
     font-size: clamp(3rem, 12vw, 4.5rem);
   }
@@ -1369,7 +1366,7 @@ img {
   }
 
   .contact__social {
-    margin: 1rem 0 0;
+    margin: 1rem 0 0 0.75rem;
   }
 }
 
