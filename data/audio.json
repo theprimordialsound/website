@@ -1,32 +1,3 @@
 {
-  "tracks": [
-    {
-      "title": "Nightfall",
-      "category": "Indie Rock",
-      "service": "Mix & Master",
-      "duration": "03:42",
-      "audio": null
-    },
-    {
-      "title": "Monsoon Sessions",
-      "category": "Acoustic",
-      "service": "Session Guitar",
-      "duration": "04:18",
-      "audio": null
-    },
-    {
-      "title": "Live at Dusk",
-      "category": "Live",
-      "service": "FOH Mix",
-      "duration": "05:06",
-      "audio": null
-    },
-    {
-      "title": "Afterhours",
-      "category": "Alternative",
-      "service": "Session Drums",
-      "duration": "03:56",
-      "audio": null
-    }
-  ]
+  "tracks": []
 }
