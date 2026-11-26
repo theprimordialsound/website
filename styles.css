@@ -202,6 +202,12 @@ img {
   line-height: 0.82;
 }
 
+.about h2,
+.contact h2 {
+  font-family: "Teko", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+}
+
 .hero h1 span {
   color: var(--accent);
 }
@@ -608,7 +614,7 @@ img {
 
 .about {
   display: block;
-  background: #151515;
+  background: var(--background);
 }
 
 .about__content {
@@ -616,61 +622,128 @@ img {
 }
 
 .about h2 {
-  max-width: 34rem;
-  margin: 1.6rem 0;
-  font-size: clamp(3.2rem, 7vw, 6.2rem);
-  line-height: 0.95;
+  max-width: 24rem;
+  margin: 1.6rem 0 1.15rem;
+  font-size: clamp(5rem, 8vw, 7.5rem);
+  line-height: 0.8;
 }
 
-.about__tagline,
-.about__location {
-  color: #aaa;
-  font-size: 0.77rem;
-  line-height: 1.8;
-}
-
-.about__tagline {
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.about__tagline span {
+.about__eyebrow {
   color: var(--accent);
 }
 
-.about__location {
-  margin-top: 2rem;
+.about__name {
+  margin: 0 0 0.65rem;
+  font-family: "Teko", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
+.about__copy {
+  max-width: 44rem;
+  margin: 0.8rem 0 0;
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .contact {
-  padding: clamp(5rem, 10vw, 9rem) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.4rem var(--gutter) 0;
+  padding: clamp(3.5rem, 4vw, 4.5rem) var(--gutter) 3.5rem;
   background: var(--surface);
+  text-align: center;
+}
+
+.contact__eyebrow {
+  margin: 0 0 clamp(2rem, 4vw, 3.5rem);
 }
 
 .contact h2 {
-  max-width: 62rem;
-  margin: 1.2rem 0;
-  font-size: clamp(3.4rem, 8vw, 6.5rem);
-  line-height: 0.95;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(4.5rem, 8vw, 8rem);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
 }
 
-.contact > p:not(.eyebrow) {
-  margin: 0 0 1.8rem;
+.contact h2 span {
+  color: var(--accent);
+}
+
+.contact__intro {
+  max-width: 38rem;
+  margin: 1rem 0 2rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contact__email {
+  display: flex;
+  width: min(100%, 44rem);
+  min-height: 5.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+  border: 1px solid #414147;
+  border-radius: 0.55rem;
+  background: #1d1d21;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  text-align: left;
+  transition: border-color 160ms ease;
+}
+
+.contact__email:hover {
+  border-color: var(--accent);
+}
+
+.contact__email > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact__email-arrow {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.3rem;
+  background: var(--accent);
+  color: #101010;
+}
+
+.contact__email-arrow svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .contact__social {
   display: inline-flex;
-  width: 2.7rem;
-  height: 2.7rem;
+  min-width: 11.25rem;
+  min-height: 3.3rem;
   align-items: center;
   justify-content: center;
-  margin-left: 1.25rem;
+  gap: 0.75rem;
+  padding: 0 1rem;
   border: 1px solid var(--line);
   color: #b6b6bd;
-  transition: color 160ms ease;
+  font-size: 0.8rem;
+  transition: border-color 160ms ease, color 160ms ease;
 }
 
 .contact__social:hover {
@@ -684,8 +757,21 @@ img {
 }
 
 .contact__social svg {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+}
+
+.contact__booking {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact__booking:hover {
+  color: var(--accent);
 }
 
 .booking-dialog {
@@ -948,11 +1034,13 @@ img {
 
 .site-footer {
   display: flex;
-  min-height: 5.5rem;
+  min-height: 4.5rem;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1rem var(--gutter);
+  gap: 2rem;
+  margin-inline: var(--gutter);
+  padding: 1rem clamp(1.25rem, 4.5vw, 4.5rem);
+  border-top: 1px solid var(--line);
   background: var(--surface);
 }
 
@@ -964,9 +1052,12 @@ img {
   display: none;
 }
 
-.site-footer .eyebrow,
-.back-to-top {
+.site-footer__motto,
+.site-footer__copyright {
+  color: #aaa;
   font-size: 0.5rem;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
 }
 
 .templates-site {
@@ -1062,37 +1153,8 @@ img {
   font-size: 0.7rem;
 }
 
-.contact--compact {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 0.8rem 2rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.contact--compact h2 {
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.contact--compact > p:not(.eyebrow) {
-  grid-column: 1;
-  margin: 0;
-}
-
-.contact--compact .button {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-}
-
 .site-footer--templates {
-  border-top: 1px solid var(--line);
   font-size: 0.6rem;
-}
-
-.site-footer--templates .eyebrow {
-  margin-left: auto;
 }
 
 @media (max-width: 1000px) {
@@ -1296,11 +1358,51 @@ img {
   }
 
   .about h2 {
-    font-size: clamp(3rem, 12vw, 4.5rem);
+    font-size: clamp(4rem, 14vw, 5.5rem);
   }
 
   .contact h2 {
-    font-size: clamp(3rem, 12vw, 4.5rem);
+    font-size: clamp(3.75rem, 16vw, 5.5rem);
+  }
+
+  .contact {
+    margin-top: 1.25rem;
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .contact__eyebrow {
+    margin-bottom: 2rem;
+  }
+
+  .contact__intro {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__email {
+    min-height: 4rem;
+    margin-bottom: 1.25rem;
+    padding: 0.5rem;
+    font-size: clamp(0.75rem, 4vw, 1rem);
+  }
+
+  .contact__email-arrow {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .contact__socials {
+    width: min(100%, 24rem);
+    gap: 0.65rem;
+  }
+
+  .contact__social {
+    min-width: 9rem;
+    min-height: 3rem;
+    flex: 1 1 9rem;
+  }
+
+  .contact__booking {
+    margin-top: 1rem;
   }
 
   .booking-dialog {
@@ -1328,11 +1430,8 @@ img {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .site-footer .eyebrow {
-    margin-left: 0;
+    gap: 0.65rem;
+    padding: 1.25rem var(--gutter);
   }
 
   .site-header--templates {
@@ -1353,21 +1452,6 @@ img {
     justify-self: start;
   }
 
-  .contact--compact {
-    display: block;
-  }
-
-  .contact--compact h2 {
-    margin-bottom: 1rem;
-  }
-
-  .contact--compact .button {
-    margin-top: 1.5rem;
-  }
-
-  .contact__social {
-    margin: 1rem 0 0 0.75rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
