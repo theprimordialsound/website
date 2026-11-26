@@ -164,6 +164,7 @@
         <h2>Have an idea,<br>not a session?</h2>
         <p>Bring your idea. We'll help turn it into a complete song.</p>
         <a class="button button--outline" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book a session <span aria-hidden="true">↗</span></a>
+        <a class="contact__social" href="https://www.instagram.com/theprimordialsound/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
@@ -178,40 +179,40 @@
     <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
       <div class="booking-dialog__header">
         <div>
-          <p class="eyebrow"><span class="accent">Booking /</span> The Primordial Sound</p>
+          <p class="eyebrow">Let’s find your sound</p>
           <h2 id="booking-title">Book a session</h2>
         </div>
         <button class="booking-dialog__close" type="button" aria-label="Close booking form">×</button>
       </div>
-      <p class="booking-dialog__intro">Tell us about your project and we’ll get back to you.</p>
-      <form class="booking-form" id="booking-form" target="booking-response-frame" method="post">
-        <label>
-          Name
-          <input name="name" autocomplete="name" maxlength="120" required>
+      <p class="booking-dialog__intro">Tell us about your music and what you need. We’ll help you find the right next step.</p>
+      <form class="booking-form" id="booking-form">
+        <fieldset class="booking-services">
+          <legend>What are we working on?</legend>
+          <span class="booking-services__hint">Select all that apply</span>
+          <div class="booking-services__options">
+            <label class="booking-service"><input type="checkbox" name="services" value="Live Mixing"><span>Live Mixing</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Mixing &amp; Mastering"><span>Mixing &amp; Mastering</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Session Guitarist"><span>Session Guitarist</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Session Drummer"><span>Session Drummer</span></label>
+            <label class="booking-service"><input type="checkbox" name="services" value="Song Setup"><span>Song Setup</span></label>
+          </div>
+        </fieldset>
+        <label class="booking-field">
+          Your name
+          <input name="name" autocomplete="name" maxlength="120" placeholder="Your name" required>
         </label>
-        <label>
-          Email
-          <input name="email" type="email" autocomplete="email" maxlength="254" required>
+        <label class="booking-field">
+          Email address
+          <input name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
         </label>
-        <label>
-          Service
-          <input name="service" maxlength="100" required>
+        <label class="booking-field booking-field--project">
+          A little about your project
+          <textarea name="message" rows="4" maxlength="3000" placeholder="The idea, the timeline, the sound you’re chasing..." required></textarea>
         </label>
-        <label>
-          Project details
-          <textarea name="message" rows="4" maxlength="3000" required></textarea>
-        </label>
-        <label class="booking-form__website" aria-hidden="true">
-          Leave this field empty
-          <input name="website" tabindex="-1" autocomplete="off">
-        </label>
-        <input name="nonce" type="hidden">
-        <p class="booking-form__status" id="booking-status" role="status" aria-live="polite"></p>
-        <button class="button button--solid booking-form__submit" type="submit" disabled>Send booking request <span aria-hidden="true">↗</span></button>
+        <button class="button button--solid booking-form__submit" type="submit">Let’s talk sound <span aria-hidden="true">↗</span></button>
+        <p class="booking-form__footer">Preview form <span>•</span> Continue in your email app to send details</p>
       </form>
-      <iframe class="booking-response-frame" name="booking-response-frame" title="Booking request response"></iframe>
     </dialog>
-    <script src="scripts/config.js" defer></script>
     <script src="scripts/site.js" defer></script>
   </body>
 </html>

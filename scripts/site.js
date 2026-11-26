@@ -221,34 +221,13 @@ if (bookingDialog) {
 
 function setupBookingForm(dialog) {
   const form = dialog.querySelector("#booking-form");
-  const frame = dialog.querySelector(".booking-response-frame");
-  const status = dialog.querySelector("#booking-status");
-  const submitButton = form.querySelector(".booking-form__submit");
   const closeButton = dialog.querySelector(".booking-dialog__close");
-  const endpoint = getBookingEndpoint(window.TPS_CONFIG?.bookingEndpoint);
-  let activeNonce = "";
-  let responseTimeout;
-
-  function showStatus(message, state) {
-    status.textContent = message;
-    status.dataset.state = state;
-  }
-
-  if (endpoint) {
-    form.action = endpoint.href;
-    submitButton.disabled = false;
-  } else {
-    showStatus("The booking form is not configured yet. Please email hello@theprimordialsound.com.", "error");
-  }
 
   document.querySelectorAll("[data-booking-open]").forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
       if (!dialog.open) {
         dialog.showModal();
-      }
-      if (!endpoint) {
-        showStatus("The booking form is not configured yet. Please email hello@theprimordialsound.com.", "error");
       }
     });
   });
@@ -261,91 +240,33 @@ function setupBookingForm(dialog) {
   });
 
   form.addEventListener("submit", (event) => {
-    if (!endpoint) {
-      event.preventDefault();
-      showStatus("The booking form is not configured yet. Please email hello@theprimordialsound.com.", "error");
-      return;
-    }
-
-    activeNonce = createBookingNonce();
-    if (!activeNonce) {
-      event.preventDefault();
-      showStatus("This browser could not securely prepare your request. Please email hello@theprimordialsound.com.", "error");
-      return;
-    }
-
-    form.elements.namedItem("nonce").value = activeNonce;
-    submitButton.disabled = true;
-    showStatus("Sending your booking request…", "pending");
-    window.clearTimeout(responseTimeout);
-    responseTimeout = window.setTimeout(() => {
-      submitButton.disabled = false;
-      showStatus("We couldn’t confirm delivery. Please try again or email hello@theprimordialsound.com.", "error");
-    }, 45000);
-  });
-
-  window.addEventListener("message", (event) => {
-    if (
-      event.source !== frame.contentWindow
-      || !isBookingResponseOrigin(event.origin)
-      || !event.data
-      || event.data.type !== "tps-booking-response"
-      || event.data.nonce !== activeNonce
-    ) {
-      return;
-    }
-
-    window.clearTimeout(responseTimeout);
-    submitButton.disabled = false;
-    if (event.data.status === "sent") {
-      form.reset();
-      activeNonce = "";
-      showStatus("Your booking request was sent. We’ll be in touch soon.", "success");
-    } else {
-      showStatus("Your request could not be sent. Please try again or email hello@theprimordialsound.com.", "error");
-    }
+    event.preventDefault();
+    window.location.href = buildBookingMailto(form);
   });
 }
 
-function getBookingEndpoint(value) {
-  if (typeof value !== "string" || value.trim() === "") {
-    return null;
-  }
+function buildBookingMailto(form) {
+  const formData = new FormData(form);
+  const services = formData.getAll("services");
+  const name = String(formData.get("name") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const project = String(formData.get("message") || "").trim();
+  const body = [
+    "Hello,",
+    "",
+    "I'd like to talk about a session.",
+    "",
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Services: ${services.length ? services.join(", ") : "Not specified"}`,
+    "",
+    "A little about my project:",
+    project,
+  ].join("\n");
+  const parameters = new URLSearchParams({
+    subject: `Booking request - ${name}`,
+    body,
+  });
 
-  try {
-    const url = new URL(value);
-    if (
-      url.protocol !== "https:"
-      || url.hostname !== "script.google.com"
-      || url.username
-      || url.password
-      || url.port
-      || !/^\/macros\/s\/[^/]+\/exec\/?$/.test(url.pathname)
-      || url.search
-      || url.hash
-    ) {
-      return null;
-    }
-    return url;
-  } catch {
-    return null;
-  }
-}
-
-function isBookingResponseOrigin(origin) {
-  try {
-    const hostname = new URL(origin).hostname;
-    return hostname === "script.google.com" || hostname.endsWith(".googleusercontent.com");
-  } catch {
-    return false;
-  }
-}
-
-function createBookingNonce() {
-  if (!window.crypto?.getRandomValues) {
-    return "";
-  }
-  const bytes = new Uint8Array(16);
-  window.crypto.getRandomValues(bytes);
-  return [...bytes].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+  return `mailto:hello@theprimordialsound.com?${parameters.toString()}`;
 }
