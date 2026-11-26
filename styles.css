@@ -288,6 +288,69 @@ img {
   border-top: 1px solid var(--line);
 }
 
+.audio-track {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.audio-track__title {
+  margin: 0 0 1.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.audio-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.audio-side {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--background);
+}
+
+.audio-side__label {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.audio-waveform {
+  display: flex;
+  height: 3.25rem;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+
+.audio-waveform span {
+  flex: 1 1 0;
+  min-width: 2px;
+  height: var(--bar-height);
+  border-radius: 2px;
+  background: var(--muted);
+  opacity: 0.75;
+}
+
+.audio-side--after .audio-waveform span {
+  background: var(--accent);
+}
+
+.audio-side audio {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  color-scheme: dark;
+}
+
 .empty-state {
   margin: 0;
   color: var(--muted);
@@ -558,6 +621,10 @@ img {
   .about {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .audio-comparison {
+    grid-template-columns: 1fr;
   }
 
   .about__image,
