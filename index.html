@@ -3,10 +3,114 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Primordial Sound">
-    <title>The Primordial Sound</title>
+    <meta name="description" content="Live sound, studio production, and session musicians.">
+    <title>The Primordial Sound — Live Sound · Studio · Label</title>
+    <link rel="icon" href="assets/brand/fader-icon-dark.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main id="app"></main>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="The Primordial Sound, home">
+        <img src="assets/brand/fader-icon-dark.png" alt="">
+        <span>THE PRIMORDIAL SOUND</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#listen">Listen</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="templates.html">Templates</a>
+      </nav>
+      <a class="button button--outline header-cta" href="#contact">Book a session <span aria-hidden="true">↗</span></a>
+      <details class="mobile-nav">
+        <summary aria-label="Open navigation">Menu <span aria-hidden="true">+</span></summary>
+        <nav aria-label="Mobile navigation">
+          <a href="#services">Services</a>
+          <a href="#listen">Listen</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="templates.html">Templates</a>
+        </nav>
+      </details>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero__content">
+          <p class="eyebrow">Live sound <span>/</span> Studio production <span>/</span> Session musicians</p>
+          <h1><span>Stage.</span><span class="accent">Studio.</span><span>Sound.</span></h1>
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>Services</h2>
+        </div>
+        <ol class="service-list">
+          <li><span class="service-number">01</span><h3>Live Sound</h3><span class="service-arrow" aria-hidden="true">↗</span></li>
+          <li><span class="service-number">02</span><h3>Studio Production</h3><span class="service-arrow" aria-hidden="true">↗</span></li>
+          <li><span class="service-number">03</span><h3>Session Musicians</h3><span class="service-arrow" aria-hidden="true">↗</span></li>
+        </ol>
+      </section>
+
+      <section class="section listen" id="listen">
+        <div class="section-heading">
+          <p class="eyebrow">Audio comparisons</p>
+          <h2>Listen</h2>
+        </div>
+        <div class="audio-list" aria-live="polite">
+          <p class="empty-state">Audio comparisons will appear here when the audio manifest is available.</p>
+        </div>
+      </section>
+
+      <section class="section work" id="work">
+        <div class="section-heading section-heading--row">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Work</h2>
+          </div>
+          <span class="eyebrow">Live sound · Studio · Label</span>
+        </div>
+        <div class="work-table-wrap">
+          <table class="work-table">
+            <thead>
+              <tr><th scope="col">Project</th><th scope="col">Service</th><th scope="col">Year</th><th scope="col" aria-label="Details"></th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="4" class="empty-state">Selected work will be added here.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="about__image">
+          <img src="assets/images/live-console.jpg" alt="Mixing console in front of a live stage">
+        </div>
+        <div class="about__content">
+          <p class="eyebrow">About</p>
+          <h2>Live sound.<br>Studio.<br>Label.</h2>
+          <p class="about__tagline">THE PRIMORDIAL SOUND</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Book a session.</h2>
+        <p class="empty-state">Contact details will be added here.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top">
+        <img src="assets/brand/fader-icon-dark.png" alt="">
+        <span>THE PRIMORDIAL SOUND</span>
+      </a>
+      <span class="eyebrow">Live sound · Studio · Label</span>
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </footer>
   </body>
 </html>
