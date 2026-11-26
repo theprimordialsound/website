@@ -823,6 +823,7 @@ body:not(.templates-site) .contact {
   place-items: center;
   margin-top: 0.15rem;
   border: 0;
+  border-radius: 0;
   background: transparent;
   color: #a4a4ab;
   cursor: pointer;
@@ -831,12 +832,15 @@ body:not(.templates-site) .contact {
 }
 
 .booking-dialog__close:hover {
-  color: var(--accent);
+  color: var(--foreground);
+  outline: 1px solid var(--muted);
+  outline-offset: 3px;
+  border-radius: 0;
 }
 
 .booking-dialog__close:focus-visible {
-  border-radius: 0.25rem;
-  outline: 2px solid var(--accent);
+  border-radius: 0;
+  outline: 2px solid var(--foreground);
   outline-offset: 3px;
 }
 
