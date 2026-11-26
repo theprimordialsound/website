@@ -822,6 +822,7 @@ body:not(.templates-site) .contact {
   flex: 0 0 auto;
   place-items: center;
   margin-top: 0.15rem;
+  padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
