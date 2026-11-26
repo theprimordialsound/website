@@ -18,9 +18,9 @@ There is no build step or dependency installation required. Deploy the repositor
 
 The supplied logo variants and selected photography from the Figma prototype are in `assets/`.
 
-## Audio comparisons
+## Audio player
 
-The Listen section reads `data/audio.json`. Each track has `title`, `category`, `service`, and `duration` fields, plus `before` and `after` objects with a `label` and `url`. Add each audio URL when the files are available; until then, leave the URL as `null`. The player stays disabled until usable audio is provided. URLs may be repository-relative paths or HTTP(S) links.
+The Listen section reads `data/audio.json`. Each track has `title`, `category`, `service`, and `duration` fields, plus an `audio` URL. Add the mix URL when the file is available; until then, leave `audio` as `null`. The player stays disabled until usable audio is provided. URLs may be repository-relative paths or HTTP(S) links.
 
 ## Booking requests
 

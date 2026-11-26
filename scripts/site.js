@@ -24,8 +24,8 @@ async function loadAudioManifest(manifestPath) {
       demoList.append(createTrackElement(track, index));
     });
   } catch (error) {
-    console.error("Unable to load audio comparisons.", error);
-    showMessage("Audio comparisons could not be loaded. Check the audio manifest and try again.", "error");
+    console.error("Unable to load audio tracks.", error);
+    showMessage("Audio tracks could not be loaded. Check the audio manifest and try again.", "error");
   }
 }
 
@@ -50,31 +50,26 @@ function validateManifest(manifest) {
       category: track.category.trim(),
       service: track.service.trim(),
       duration: track.duration.trim(),
-      before: validateAudioSide(track.before, index, "before"),
-      after: validateAudioSide(track.after, index, "after"),
+      audioUrl: validateAudioUrl(track.audio, index),
     };
   });
 }
 
-function validateAudioSide(side, trackIndex, sideName) {
-  if (!side || typeof side.label !== "string" || side.label.trim() === "") {
-    throw new TypeError(`Audio track ${trackIndex + 1} needs a ${sideName} label.`);
-  }
-
+function validateAudioUrl(audioUrl, trackIndex) {
   let url = null;
-  if (side.url !== null && side.url !== undefined && side.url !== "") {
-    if (typeof side.url !== "string") {
-      throw new TypeError(`Audio track ${trackIndex + 1} has an invalid ${sideName} URL.`);
+  if (audioUrl !== null && audioUrl !== undefined && audioUrl !== "") {
+    if (typeof audioUrl !== "string") {
+      throw new TypeError(`Audio track ${trackIndex + 1} has an invalid audio URL.`);
     }
 
-    const parsedUrl = new URL(side.url, document.baseURI);
+    const parsedUrl = new URL(audioUrl, document.baseURI);
     if (parsedUrl.protocol !== "http:" && parsedUrl.protocol !== "https:") {
-      throw new TypeError(`Audio track ${trackIndex + 1} has an unsupported ${sideName} URL.`);
+      throw new TypeError(`Audio track ${trackIndex + 1} has an unsupported audio URL.`);
     }
     url = parsedUrl.href;
   }
 
-  return { label: side.label.trim(), url };
+  return url;
 }
 
 function createTrackElement(track, index) {
@@ -88,19 +83,20 @@ function createTrackElement(track, index) {
   const audio = document.createElement("audio");
   audio.className = "demo-row__audio";
   audio.preload = "none";
-  audio.setAttribute("aria-label", `${track.title} audio comparison`);
+  audio.setAttribute("aria-label", `${track.title} audio`);
+  if (track.audioUrl) {
+    audio.src = track.audioUrl;
+  }
 
-  const playableSides = [track.before, track.after].filter((side) => side.url);
-  let activeSide = track.after.url ? "after" : "before";
   let isPlaying = false;
 
   const playButton = document.createElement("button");
   playButton.className = "play-button";
   playButton.type = "button";
-  playButton.disabled = playableSides.length === 0;
+  playButton.disabled = !track.audioUrl;
   playButton.setAttribute("aria-label", `Play ${track.title}`);
   playButton.setAttribute("aria-pressed", "false");
-  playButton.title = playableSides.length ? "Play audio sample" : "Audio files have not been added yet";
+  playButton.title = track.audioUrl ? "Play audio sample" : "Audio file has not been added yet";
 
   const playIcon = document.createElement("span");
   playIcon.className = "play-icon";
@@ -143,23 +139,6 @@ function createTrackElement(track, index) {
   duration.className = "demo-row__duration";
   duration.textContent = track.duration;
 
-  const modeButton = document.createElement("button");
-  modeButton.className = "demo-mode";
-  modeButton.type = "button";
-  modeButton.disabled = !track.before.url || !track.after.url;
-  modeButton.textContent = modeLabel(activeSide);
-  modeButton.setAttribute("aria-label", `Switch ${track.title} comparison to ${modeLabel(activeSide)}`);
-  modeButton.title = modeButton.disabled
-    ? "Both before and after audio files are required"
-    : "Switch between the before and after audio";
-
-  function setActiveSide(sideName) {
-    activeSide = sideName;
-    audio.src = track[sideName].url;
-    modeButton.textContent = modeLabel(sideName);
-    modeButton.setAttribute("aria-label", `Switch ${track.title} comparison to ${modeLabel(sideName)}`);
-  }
-
   function stopPlayback() {
     isPlaying = false;
     playButton.setAttribute("aria-pressed", "false");
@@ -173,10 +152,6 @@ function createTrackElement(track, index) {
       return;
     }
 
-    if (audio.src !== track[activeSide].url) {
-      setActiveSide(activeSide);
-    }
-
     try {
       await audio.play();
       isPlaying = true;
@@ -185,17 +160,6 @@ function createTrackElement(track, index) {
     } catch (error) {
       console.error(`Unable to play audio for "${track.title}".`, error);
       stopPlayback();
-    }
-  });
-
-  modeButton.addEventListener("click", () => {
-    const nextSide = activeSide === "before" ? "after" : "before";
-    const resumePlayback = isPlaying;
-    audio.pause();
-    stopPlayback();
-    setActiveSide(nextSide);
-    if (resumePlayback) {
-      playButton.click();
     }
   });
 
@@ -212,15 +176,11 @@ function createTrackElement(track, index) {
   });
   audio.addEventListener("error", () => {
     stopPlayback();
-    console.error(`Unable to load audio for "${track.title}" (${activeSide}).`);
+    console.error(`Unable to load audio for "${track.title}".`);
   });
 
-  article.append(number, playButton, text, waveform, duration, modeButton, audio);
+  article.append(number, playButton, text, waveform, duration, audio);
   return article;
-}
-
-function modeLabel(sideName) {
-  return sideName === "before" ? "Before" : "After";
 }
 
 function showMessage(message, type) {

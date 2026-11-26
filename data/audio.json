@@ -5,56 +5,28 @@
       "category": "Indie Rock",
       "service": "Mix & Master",
       "duration": "03:42",
-      "before": {
-        "label": "Raw",
-        "url": null
-      },
-      "after": {
-        "label": "Finished",
-        "url": null
-      }
+      "audio": null
     },
     {
       "title": "Monsoon Sessions",
       "category": "Acoustic",
       "service": "Session Guitar",
       "duration": "04:18",
-      "before": {
-        "label": "Raw",
-        "url": null
-      },
-      "after": {
-        "label": "Finished",
-        "url": null
-      }
+      "audio": null
     },
     {
       "title": "Live at Dusk",
       "category": "Live",
       "service": "FOH Mix",
       "duration": "05:06",
-      "before": {
-        "label": "Raw",
-        "url": null
-      },
-      "after": {
-        "label": "Finished",
-        "url": null
-      }
+      "audio": null
     },
     {
       "title": "Afterhours",
       "category": "Alternative",
       "service": "Session Drums",
       "duration": "03:56",
-      "before": {
-        "label": "Raw",
-        "url": null
-      },
-      "after": {
-        "label": "Finished",
-        "url": null
-      }
+      "audio": null
     }
   ]
 }
