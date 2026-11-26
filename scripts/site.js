@@ -191,15 +191,9 @@ function showMessage(message, type) {
 }
 
 const bookingDialog = document.querySelector("#booking-dialog");
-const bookingFooter = document.querySelector("#booking-footer");
 
 if (bookingDialog) {
   setupBookingForm(bookingDialog);
-  bookingFooter?.addEventListener("click", () => {
-    if (!bookingDialog.open) {
-      bookingDialog.showModal();
-    }
-  });
 }
 
 function setupBookingForm(dialog) {
