@@ -455,21 +455,12 @@ img {
 }
 
 .about {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
-  align-items: center;
-  gap: clamp(2rem, 7vw, 6rem);
+  display: block;
   background: var(--background);
 }
 
 .about__content {
   max-width: 62rem;
-}
-
-.about__image-slot {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  background: var(--surface);
 }
 
 .about h2 {
@@ -1208,15 +1199,6 @@ body:not(.templates-site) .contact {
 
   .service-row--text {
     grid-template-columns: 2.2rem minmax(0, 1fr);
-  }
-
-  .about {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-  }
-
-  .about__image-slot {
-    max-width: 35rem;
   }
 
   .about h2 {

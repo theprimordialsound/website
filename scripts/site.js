@@ -1,3 +1,11 @@
+document.querySelectorAll(".mobile-nav").forEach((menu) => {
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.open = false;
+    });
+  });
+});
+
 const bookingDialog = document.querySelector("#booking-dialog");
 
 if (bookingDialog) {
