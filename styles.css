@@ -461,11 +461,12 @@ img {
 
 .about__content {
   max-width: 62rem;
+  margin-inline: auto;
 }
 
 .about h2 {
   max-width: 24rem;
-  margin: 1.6rem 0 1.15rem;
+  margin: 1.6rem auto 1.15rem;
   font-size: clamp(5rem, 8vw, 7.5rem);
   line-height: 0.8;
 }
@@ -485,7 +486,7 @@ img {
 
 .about__copy {
   max-width: 44rem;
-  margin: 0.8rem 0 0;
+  margin: 0.8rem auto 0;
   color: #aaa;
   font-size: 0.95rem;
   line-height: 1.7;
@@ -498,6 +499,10 @@ img {
   margin: 2.4rem var(--gutter) 0;
   padding: clamp(3.5rem, 4vw, 4.5rem) var(--gutter) 3.5rem;
   background: var(--surface);
+}
+
+.about__content,
+.contact {
   text-align: center;
 }
 
