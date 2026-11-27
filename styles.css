@@ -7,6 +7,8 @@
   --line: #343434;
   --accent: #ef8037;
   --gutter: clamp(1.25rem, 5vw, 4rem);
+  --rail-inset: 0rem;
+  --content-gutter: calc(var(--gutter) + var(--rail-inset));
   font-family: "Inter", "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
   background: var(--background);
   color: var(--foreground);
@@ -17,7 +19,8 @@
 
 @media (min-width: 90rem) {
   :root {
-    --gutter: max(6rem, calc(50% - 43rem));
+    --gutter: max(4rem, calc(50% - 45rem));
+    --rail-inset: 2rem;
   }
 }
 
@@ -93,7 +96,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 0 var(--gutter);
+  padding: 0 var(--content-gutter);
   border-bottom: 1px solid var(--line);
   background: rgb(16 16 16 / 97%);
 }
@@ -206,7 +209,7 @@ img {
   min-height: 54rem;
   align-items: flex-start;
   overflow: hidden;
-  padding: 3.2rem var(--gutter) 7rem;
+  padding: 3.2rem var(--content-gutter) 7rem;
   background-color: #111;
   background-image:
     linear-gradient(90deg, rgb(9 9 9 / 94%) 0%, rgb(9 9 9 / 74%) 41%, rgb(9 9 9 / 12%) 100%),
@@ -294,7 +297,7 @@ img {
 
 .hero__location {
   position: absolute;
-  right: var(--gutter);
+  right: var(--content-gutter);
   bottom: 9.5rem;
   margin: 0;
   color: var(--foreground);
@@ -307,9 +310,9 @@ img {
 
 .hero__signal {
   position: absolute;
-  right: var(--gutter);
+  right: var(--content-gutter);
   bottom: 2rem;
-  left: var(--gutter);
+  left: var(--content-gutter);
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -505,7 +508,7 @@ img {
   flex-direction: column;
   align-items: center;
   margin: 2.4rem var(--gutter) 0;
-  padding: clamp(3.5rem, 4vw, 4.5rem) var(--gutter) 3.5rem;
+  padding: clamp(3.5rem, 4vw, 4.5rem) var(--content-gutter) 3.5rem;
   background: var(--surface);
 }
 
@@ -929,7 +932,7 @@ body:not(.templates-site) .contact {
 
 @media (min-width: 1001px) {
   .site-footer {
-    padding-inline: var(--gutter);
+    padding-inline: var(--content-gutter);
   }
 }
 
@@ -1162,7 +1165,7 @@ body:not(.templates-site) .contact {
   }
 
   .hero__location {
-    right: var(--gutter);
+    right: var(--content-gutter);
     bottom: 6.2rem;
     font-size: 0.5rem;
   }
@@ -1286,8 +1289,8 @@ body:not(.templates-site) .contact {
 
   .hero::before {
     position: absolute;
-    inset: 0 var(--gutter);
-    max-width: 90rem;
+    inset: 0 var(--content-gutter);
+    max-width: calc(90rem - var(--rail-inset) - var(--rail-inset));
     margin-inline: auto;
     background-image:
       linear-gradient(90deg, rgb(9 9 9 / 94%) 0%, rgb(9 9 9 / 74%) 41%, rgb(9 9 9 / 12%) 100%),
@@ -1301,7 +1304,23 @@ body:not(.templates-site) .contact {
   .about__content {
     max-width: 90rem;
     margin-inline: 0;
+    padding-inline: var(--rail-inset);
     text-align: left;
+  }
+
+  .services > .section-intro,
+  .service-list {
+    padding-inline: var(--rail-inset);
+  }
+
+  .templates-intro {
+    padding-inline: var(--content-gutter);
+  }
+
+  .templates-list__head,
+  .template-row,
+  .template-download-note {
+    padding-inline: var(--rail-inset);
   }
 
   .about h2 {
