@@ -18,9 +18,9 @@ There is no build step or dependency installation required. Deploy the repositor
 
 The supplied logo variants and selected photography from the Figma prototype are in `assets/`.
 
-## Audio player
+## Clean page URLs
 
-The Listen section reads `data/audio.json`. Each track has `title`, `category`, `service`, and `duration` fields, plus an `audio` URL. Add the mix URL when the file is available; until then, leave `audio` as `null`. The player stays disabled until usable audio is provided. URLs may be repository-relative paths or HTTP(S) links.
+Vercel serves the home page at `/`, redirects `/index.html` to `/`, and removes `.html` extensions from page URLs. This behavior is configured in `vercel.json`; local preview servers may not apply those redirects.
 
 ## Booking requests
 

@@ -25,20 +25,16 @@
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#services">Services</a>
-        <a href="#listen">Listen</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a href="templates.html">Templates</a>
       </nav>
       <a class="button button--outline header-cta" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book a session</a>
       <details class="mobile-nav">
         <summary aria-label="Open navigation">Menu <span aria-hidden="true">+</span></summary>
         <nav aria-label="Mobile navigation">
           <a href="#services">Services</a>
-          <a href="#listen">Listen</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <a href="templates.html">Templates</a>
         </nav>
       </details>
     </header>
@@ -50,8 +46,7 @@
           <h1>Stage.<br><span>Studio.</span><br>Sound.</h1>
           <p class="hero__intro">From your first idea to the final song. Live mixes, release-ready masters, and guitar and drum tracks shaped around your music.</p>
           <div class="hero__actions">
-            <a class="button button--solid" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book now <span aria-hidden="true">↗</span></a>
-            <a class="button button--outline" href="#listen">Listen to demos <span aria-hidden="true">↓</span></a>
+            <a class="button button--solid" href="#booking-dialog" data-booking-open aria-haspopup="dialog">Book now <svg class="icon-arrow icon-arrow--up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"></path></svg></a>
           </div>
         </div>
         <!-- <p class="hero__location">Based in India.<br>Heard worldwide.</p> -->
@@ -110,35 +105,20 @@
             <div class="service-row__content">
               <h3>Song setup</h3>
               <p>Bring an idea, a melody, or a rough voice note. We'll develop the arrangement, record the parts, and deliver a complete song built around your vision.</p>
-              <p class="service-row__tags">Your idea <span>→</span> Arrangement &amp; recording <span>→</span> Your finished song</p>
+              <p class="service-row__tags">Your idea <svg class="icon-arrow icon-arrow--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"></path></svg> Arrangement &amp; recording <svg class="icon-arrow icon-arrow--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"></path></svg> Your finished song</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="listen section" id="listen">
-        <div class="listen__heading">
-          <p class="eyebrow"><span class="accent">02 /</span> Listen closely</p>
-          <h2>The difference is in<br>the details.</h2>
-          <p class="listen__subhead">Hear the sound behind every project.</p>
-          <p class="listen__note">Player preview / Sample audio to be added</p>
-        </div>
-        <div class="demo-list" id="demo-list" data-audio-manifest="data/audio.json" aria-live="polite">
-          <p class="empty-state">Loading demos…</p>
-        </div>
-        <div class="listen__footer">
-          <p>Best experienced with headphones.</p>
-          <p>Four perspectives. One uncompromising sound.</p>
-        </div>
-      </section>
-
       <section class="about section" id="about">
         <div class="about__content">
-          <p class="eyebrow about__eyebrow">03 / The person behind the sound</p>
+          <p class="eyebrow about__eyebrow">02 / The person behind the sound</p>
           <h2>Built on<br>instinct<br>&amp; craft.</h2>
           <p class="about__copy">I’m Vaisakh Pisharody, a drummer based in India. I work with you to find the groove, feel, and energy your music needs.</p>
           <p class="about__copy">Whether you’re preparing for a show, finishing a release, or recording your next idea, tell me what you want to create. We’ll shape the sound around your music.</p>
         </div>
+        <div class="about__image-slot" aria-hidden="true"></div>
       </section>
 
       <section class="contact" id="contact">
@@ -211,9 +191,9 @@
           Leave this field empty
           <input name="website" tabindex="-1" autocomplete="off">
         </label>
-        <button class="button button--solid booking-form__submit" type="submit">Let’s talk sound <span aria-hidden="true">↗</span></button>
+        <button class="button button--solid booking-form__submit" type="submit">Let’s talk sound <svg class="icon-arrow icon-arrow--up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"></path></svg></button>
         <p class="booking-form__status" id="booking-status" role="status" aria-live="polite"></p>
-        <p class="booking-form__footer">Secure booking form <span>•</span> No email app needed to send</p>
+        <p class="booking-form__footer">Secure booking form</p>
       </form>
     </dialog>
     <script src="scripts/site.js" defer></script>
