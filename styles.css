@@ -1277,6 +1277,40 @@ body:not(.templates-site) .contact {
   .booking-services__options {
     gap: 0.6rem;
   }
+}
+
+@media (min-width: 90rem) {
+  .hero {
+    background-image: none;
+  }
+
+  .hero::before {
+    position: absolute;
+    inset: 0 var(--gutter);
+    max-width: 90rem;
+    margin-inline: auto;
+    background-image:
+      linear-gradient(90deg, rgb(9 9 9 / 94%) 0%, rgb(9 9 9 / 74%) 41%, rgb(9 9 9 / 12%) 100%),
+      linear-gradient(0deg, rgb(9 9 9 / 55%) 0%, transparent 58%),
+      url("assets/images/stage-studio.jpg");
+    background-position: center;
+    background-size: cover;
+    content: "";
+  }
+
+  .about__content {
+    max-width: 90rem;
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  .about h2 {
+    margin-left: 0;
+  }
+
+  .about__copy {
+    margin-left: 0;
+  }
 
   .booking-service {
     min-height: 2.8rem;
