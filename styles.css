@@ -15,6 +15,12 @@
   scrollbar-width: auto;
 }
 
+@media (min-width: 90rem) {
+  :root {
+    --gutter: max(4rem, calc(50% - 45rem));
+  }
+}
+
 html::-webkit-scrollbar {
   width: 14px;
   height: 14px;
@@ -919,6 +925,12 @@ body:not(.templates-site) .contact {
   padding: 1rem clamp(1.25rem, 4.5vw, 4.5rem);
   border-top: 1px solid var(--line);
   background: var(--surface);
+}
+
+@media (min-width: 1001px) {
+  .site-footer {
+    padding-inline: var(--gutter);
+  }
 }
 
 .site-footer .brand {
