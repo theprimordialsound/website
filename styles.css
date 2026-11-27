@@ -20,6 +20,11 @@
 @media (min-width: 90rem) {
   :root {
     --gutter: max(4rem, calc(50% - 45rem));
+  }
+}
+
+@media (min-width: 1001px) {
+  :root {
     --rail-inset: 2rem;
   }
 }
@@ -1282,7 +1287,7 @@ body:not(.templates-site) .contact {
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1001px) {
   .hero {
     background-image: none;
   }
@@ -1330,7 +1335,9 @@ body:not(.templates-site) .contact {
   .about__copy {
     margin-left: 0;
   }
+}
 
+@media (min-width: 90rem) {
   .booking-service {
     min-height: 2.8rem;
     gap: 0.55rem;
